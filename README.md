@@ -25,7 +25,7 @@ A su vez, se conectaron los electrodos al sensor emg, que permitirá captar bien
 
 
 
-
+La mediana se calcula con la formmula
 
 
 
