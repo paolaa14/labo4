@@ -1,11 +1,17 @@
-Se realizó una práctica de laboratorio para lograr medir y explicar una señal EMG y observar a su vez la fatiga del músculo, pero es necesario comprender unos conceptos muy importantes; 
- - En electromiografía (EMG), los conceptos de respuesta rápida y respuesta lenta se refieren a la velocidad de activación y reclutamiento de las fibras musculares durante una contracción. Estas respuestas están directamente relacionadas con los dos tipos principales de fibras musculares: las de contracción rápida (tipo II) y las de contracción lenta (tipo I).
- - Las fibras musculares tipo II, también conocidas como fibras de contracción rápida, son responsables de movimientos explosivos y de alta intensidad. Estas fibras se activan de manera casi inmediata cuando el cuerpo requiere generar una gran cantidad de fuerza en poco tiempo y las características en la EMG son ; generar señales de alta amplitud, se activan en corta duración, y se fatigan rapidamente por la dependencia del metabplismo anaeróbico para producir enegía.
- - Las fibras musculares tipo I, o fibras de contracción lenta, están diseñadas para mantener una activación prolongada con menor generación de fuerza. Son esenciales para actividades que requieren resistencia y estabilidad, como el mantenimiento de la postura o el ejercicio aeróbico prolongado y las características en la EMG son; generar señales de menor frecuencia y amplitud comparandolas con las fibras rápidas, resisten más a la fatiga y se pueden mantener activas durante más tiempo y su obtención de energía es principalmente por medio del metabolismo aeróbico.
+Se realizó una práctica de laboratorio para medir y analizar una señal EMG, con el objetivo de observar la fatiga muscular. Para ello, es fundamental comprender algunos conceptos clave:
 
- 
+- En electromiografía (EMG), los términos respuesta rápida y respuesta lenta se refieren a la velocidad de activación y reclutamiento de las fibras musculares durante una contracción. Estas respuestas están directamente relacionadas con los dos tipos principales de fibras musculares: fibras de contracción rápida (tipo II) y fibras de contracción lenta (tipo I).
 
-Para llevar a cabo esto, inicialmente se realizó la preparación del sujeto de prueba, este se posicionó en una silla para colocarle los electrodos de superficie (es decir que solo se pegan en la piel) en el músculo  Flexor superficial de los dedos que se adhieren bien a la piel por el gel conductor que posee el electrodo, para lograr adquierir la señal de emg y la respectiva fatiga,  se implementó una tarjeta conocida como DAQ, pero a la vez fue necesario descargar un programa de Controlador NI-DAQmx para que el computador la reconociera y se logrará hacer una correcta toma de la señal.
+
+- Fibras musculares tipo II (contracción rápida):
+Son responsables de movimientos explosivos y de alta intensidad. Se activan casi de inmediato cuando el cuerpo necesita generar una gran cantidad de fuerza en poco tiempo. Sus características en un registro EMG son: Generan señales de alta amplitud, se activan durante cortos períodos de tiempo, se fatigan rápidamente debido a su dependencia del metabolismo anaeróbico para la producción de energía.
+
+- Fibras musculares tipo I (contracción lenta):
+Están diseñadas para mantener una activación prolongada con menor generación de fuerza. Son esenciales para actividades que requieren resistencia y estabilidad, como el mantenimiento de la postura o el ejercicio aeróbico prolongado. Sus características en un registro EMG son: Generan señales de menor frecuencia y amplitud en comparación con las fibras rápidas, son más resistentes a la fatiga y pueden mantenerse activas por períodos más largos, obtienen energía principalmente a través del metabolismo aeróbico.
+
+ - Para llevar a cabo esto, inicialmente se realizó la preparación del sujeto de prueba, este se posicionó en una silla para colocarle los electrodos de superficie (es decir que solo se pegan en la piel) en el músculo  Flexor superficial de los dedos que se adhieren bien a la piel por el gel conductor que posee el electrodo, para lograr adquierir la señal de emg y la respectiva fatiga,  se implementó una tarjeta conocida como DAQ, pero a la vez fue necesario descargar un programa de Controlador NI-DAQmx para que el computador la reconociera y se logrará hacer una correcta toma de la señal.
+
+
 
 En dado caso de querer descargarlo, se pueden dirigir a la paginal de national instruments (NI) para instalar esto, luego para ejecutar esto en el pythonn(sino se tiene descargado se puede descargar y en nuestro caso en particular estamos usando anaconda y más especificamente spyder), se debe abrir en el terminal, pip install nidaqmx, con el fin de instalar esto en el python y que lo reconozca, posterior a esto, se conecta la tarjeta DAQ al computador y se abre automaticamente el NI MAX, que reconoce esta como un device, con esto claro se procede hacer el código en python que se explicará detalladamente a continuación:
 
@@ -95,15 +101,17 @@ Imagen 1. Cómo se colocaron los electrodos en el paciente
 
 Imagen 2. Señal emg del músculo
 
-Antes de iniciar con el análisis de la gráfica es necesario mencionar que esta gráfica contiene detalles especificos sobre la frecuencia de muestreo(250 Hz), tiempo de grabación (40 SEGUNDOS, eso también se puede elegir pero según la explicación de las fibras rápidas, determinamos que en este tiempo se capturaban las contracciones necesarias para llegar a la fatiga), longitud de la señal (40.000), número de contracciones  (17 contracciones) y el músculo medido (el músculo  Flexor superficial de los dedos).
+Antes de iniciar con el análisis de la gráfica, es necesario mencionar que esta contiene detalles específicos sobre la frecuencia de muestreo (250 Hz), el tiempo de grabación (40 segundos, aunque este valor es ajustable; sin embargo, según la explicación de las fibras rápidas, determinamos que en este tiempo se capturarían las contracciones necesarias para alcanzar la fatiga), la longitud de la señal (40,000 muestras), el número de contracciones (17 contracciones) y el músculo medido (Flexor superficial de los dedos).
 
-En esta gráfica se evidencia como quedó la captura de la señal emg, del músculo mencionado previamente, que muestra  la actividad del músculo, donde se incluye la contracción, relajación y fatiga,  en esta imagen en particular, observamos que que hay cambios grandes en la amplitud de la señal, es decir que hay niveles de actividad muscular, asimismo, para llevar a cabo un análisis más claro, identificaremos las fases por las que pasa la gráfica;
+En esta gráfica se evidencia cómo quedó la captura de la señal EMG del músculo mencionado previamente. Se observa la actividad muscular, incluyendo las fases de contracción, relajación y fatiga. En esta imagen en particular, notamos cambios significativos en la amplitud de la señal, lo que indica variaciones en la actividad muscular. Para llevar a cabo un análisis más detallado, identificaremos las fases presentes en la gráfica:
  
-  En primer lugar, la fase de contracción donde se observan segmentos que la amplitud aumenta de manera signifcativa, representando la activación de las fibras musculares en rerspuesta a la contraciión que se esta haciendo de manera voluntaria, y se observa en algunos puntos más intensidad y duración, lo que indica que al ser voluntaria estos dos factores dependen de la persona que esta haciendo la contracción.
+  En primer lugar, la fase de contracción donde Se observan segmentos en los que la amplitud aumenta de manera significativa, representando la activación de las fibras musculares en respuesta a la contracción voluntaria. En algunos puntos, la intensidad y la duración de la contracción varían, lo que indica que estos factores dependen de la persona que realiza el movimiento.
  
-  En segundo lugar, la fase de relajación, no se observa completamente, debido a que se presentaron movimientos involuntarios donde se movió el brazo.
+  En segundo lugar, la fase de relajación, no se observa completamente debido a la presencia de movimientos involuntarios que ocasionaron desplazamientos del brazo.
  
-Por último, la fase de fatiga es la parte final de la señal que parece mantener cierta actividad sin volver completamente al reposo, y durante esta fase la actividad electrica del músculo cambia y pueden aparecer frecuencias más bajas por la reducción en la capacidad de generar fuerza.
+Por último, la fase de fatiga corresponde a la parte final de la señal, donde la actividad muscular persiste sin regresar completamente al estado de reposo. Durante esta fase, la actividad eléctrica del músculo cambia y pueden aparecer frecuencias más bajas debido a la reducción en la capacidad de generar fuerza.
+
+
 
 
 
