@@ -260,7 +260,8 @@ calculos estadisticos por ventana y test de hipotesis
 
 <img width="722" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 27 p m" src="https://github.com/user-attachments/assets/914243fe-b87a-41a6-84af-231ad0d3e4b5" />
 
-<img width="735" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 58 p m" src="https://github.com/user-attachments/assets/7a1bbd23-3cdc-432e-80b3-1145aff319a5" />
+
+<img width="730" alt="Captura de pantalla 2025-03-27 a la(s) 11 03 52 p m" src="https://github.com/user-attachments/assets/adc64868-c39c-4d63-bf82-de36c0fed371" />
 
 
 
