@@ -132,6 +132,6 @@ if freq_means:
     if p_value < 0.05:
         print("➡ Se rechaza la hipótesis nula (H0). Hay evidencia significativa de que la media no es 50 Hz.")
     else:
-        print("✅ No se rechaza la hipótesis nula (H0). No hay suficiente evidencia para afirmar que la media es diferente de 50 Hz.")
+        print("No se rechaza la hipótesis nula (H0). No hay suficiente evidencia para afirmar que la media es diferente de 50 Hz.")
 else:
     print("No se encontraron segmentos válidos para el análisis de hipótesis.")
