@@ -66,7 +66,7 @@ A su vez, se conectaron los electrodos al sensor emg, que permitirá captar bien
 
 ![WhatsApp Image 2025-03-27 at 11 48 14](https://github.com/user-attachments/assets/670f57d2-f976-427d-a5ca-7744fa0e4679)
 
-Imagen 1. como se colocaron los electrodos en el paciente:
+Imagen 1. Cómo se colocaron los electrodos en el paciente 
 
 
 2. Para continuar, el sujero ya estando conectado se le pidió realizar primero el movimiento de apretar una pelota antiestres para llegar a la contracción con mayor facilidad, entonces se le pidió que realizará la contracción del músculo mencionado y se registra la señal por medio el código de python.
@@ -75,6 +75,8 @@ Imagen 1. como se colocaron los electrodos en el paciente:
 <img width="609" alt="Figure 2025-03-27 111639" src="https://github.com/user-attachments/assets/b6fc20c2-1ca5-49aa-bca3-ce419dd2c262" />
 
 Imagen 2. Señal emg del músculo
+
+Antes de iniciar con el análisis de la gráfica es necesario mencionar que esta gráfica contiene detalles especificos 
 
 En esta gráfica se evidencia como quedó la captura de la señal emg, del músculo mencionado previamente, que muestra  la actividad del músculo, donde se incluye la contracción, relajación y fatiga,  en esta imagen en particular, observamos que que hay cambios grandes en la amplitud de la señal, es decir que hay niveles de actividad muscular, asimismo, para llevar a cabo un análisis más claro, identificaremos las fases por las que pasa la gráfica;
  
