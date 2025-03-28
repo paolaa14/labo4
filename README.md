@@ -405,6 +405,9 @@ Si Media 1 - Media 2 ≠ 0, se detecta fatiga alternante, lo que sugiere una var
 
 
 
+
+
+
 6. Conclusiones generales;
 La aplicación de la ventana de Hann mejoró la calidad del análisis espectral, reduciendo fugas espectrales y mejorando la resolución en frecuencia.
 
