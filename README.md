@@ -94,14 +94,21 @@ Por último, la fase de fatiga es la parte final de la señal que parece mantene
 
 
    aqui con filtro
-4. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
+
+   
+5. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
 
 
 En el procesamiento de la señal EMG, se aplica una ventana de Hanning a cada segmento seleccionado. La elección de este tipo de ventana se debe a su capacidad para reducir las discontinuidades en los extremos de los segmentos, minimizando el efecto de fuga espectral en la Transformada de Fourier. La ventana de Hanning es una función suave, definida matemáticamente como:
 
-w(n)=0.5(1−cos(2πn/ N−1)
-​
- ))
+w(n)=0.5(1−cos(2πn/ N−1))
+donde 𝑁 es la longitud del segmento y  𝑛 representa las muestras dentro del segmento.
+
+En este código, el tamaño de la ventana se define en 2000 muestras, lo que permite capturar adecuadamente la estructura de las contracciones musculares sin perder información significativa. Antes de aplicar la ventana, la señal original de cada segmento presenta transiciones bruscas en los extremos. Sin embargo, tras la convolución con la ventana de Hanning, la señal se atenúa progresivamente en los bordes, reduciendo artefactos no deseados en el análisis espectral.
+
+Para visualizar el impacto de la ventana, se pueden graficar tanto la señal original del segmento como la señal tras la aplicación de la ventana. Esto permite comparar cómo cambia la amplitud y la forma de la señal después de la convolución. La superposición de ambas señales ayuda a evidenciar la reducción de efectos no deseados en la estimación del espectro de frecuencias.
+
+
 
 5. Luego a todo esto, se observará como cambia el espectro se la señal en cada ventana mientras más se acerque  a la fatiga muscular, para evaluar la disminución de la frecuencia mediana en cada ventana como indicador de la fatiga, por último se implementa una prueba de hipótesis para verificar si el cambio en la mediana tiene un valor significativo en la estadistíca.
 
