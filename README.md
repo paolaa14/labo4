@@ -101,6 +101,8 @@ Imagen 3. señal filtrada pasa alto y pasa bajo
 
 ![WhatsApp Image 2025-03-27 at 23 14 35](https://github.com/user-attachments/assets/53952ef3-e2c8-46e9-b54a-9f0c087bf4a7)
 
+
+El filtro fue diseñado considerando los parámetros estudiados en clase, asegurando una correcta eliminación de ruido y preservación de la señal de interés. Se establecieron frecuencias de corte de 20 Hz (pasa alto) y 450 Hz (pasa bajo), con una frecuencia de muestreo de 1000 Hz. Se aplicó una ventana de Hanning para minimizar el efecto de Gibbs, y el orden del filtro fue calculado en función del ancho de la banda de transición. La ecuación de la respuesta al impulso  ℎ(𝑛) se fundamenta en la función sinc, ajustada con la ventana de Hanning.
    
 4. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
 
