@@ -142,6 +142,7 @@ Imagen 8. CONTRACCIÓN Y ESPECTRO 5.
 <img width="569" alt="Figure 2025-03-27 191053 (6)" src="https://github.com/user-attachments/assets/8cfaf68f-4938-48f3-a734-95340fb8d91a" />
 
 Imagen 9. CONTRACCIÓN Y ESPECTRO 6.
+
 <img width="569" alt="Figure 2025-03-27 191053 (7)" src="https://github.com/user-attachments/assets/cbe3ac83-92c9-4d24-9c2e-03c3df24f3c3" />
 
 Imagen 10. CONTRACCIÓN Y ESPECTRO 7.
