@@ -47,8 +47,11 @@ En esta gráfica se evidencia como quedó la captura de la señal emg, del músc
 
 
 La mediana se calcula con la formmula
+senal filtrada pasa alto y pasa bajo
 <img width="617" alt="Figure 2025-03-27 191053 (1)" src="https://github.com/user-attachments/assets/76f5872d-b4a2-4559-a0e5-9c26f504154b" />
 
+
+ventanas por contracciones (17) con su respectivo espectro 
 
 <img width="569" alt="Figure 2025-03-27 191053 (2)" src="https://github.com/user-attachments/assets/8e27e4c9-142e-4eb3-993a-43c2ff532b90" />
 
@@ -86,6 +89,20 @@ La mediana se calcula con la formmula
 <img width="569" alt="Figure 2025-03-27 191053 (17)" src="https://github.com/user-attachments/assets/488dc30e-229d-43a9-8527-ef94cf6cdaa6" />
 
 <img width="569" alt="Figure 2025-03-27 191053 (18)" src="https://github.com/user-attachments/assets/5d8aeb1a-cf51-41f7-93b7-e773de954ff7" />
+
+calculos estadisticos por ventana y test de hipotesis 
+
+<img width="735" alt="Captura de pantalla 2025-03-27 a la(s) 7 17 36 p m" src="https://github.com/user-attachments/assets/a8292e93-f78e-4ff8-b9df-3baff28326d0" />
+
+<img width="730" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 02 p m" src="https://github.com/user-attachments/assets/1020933d-0686-419f-8e0f-5e4e2006a16d" />
+
+
+<img width="734" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 14 p m" src="https://github.com/user-attachments/assets/8fbea60d-c114-4a6e-b679-340ece349e57" />
+
+<img width="722" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 27 p m" src="https://github.com/user-attachments/assets/914243fe-b87a-41a6-84af-231ad0d3e4b5" />
+
+<img width="735" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 58 p m" src="https://github.com/user-attachments/assets/7a1bbd23-3cdc-432e-80b3-1145aff319a5" />
+
 
 
 
