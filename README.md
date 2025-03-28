@@ -92,11 +92,11 @@ Por último, la fase de fatiga es la parte final de la señal que parece mantene
 3. Posterior a esto, se aplica un filtro a la señal pasa alta, con el fin de eliminar componentes de baja frecuencia (ruido que se asocie al movimiento), y a su vez se implementó un filtro pasa baja para quitar frecuencias altas como el ruido electromagnético.
 
 
-
-   aqui con filtro
-
+Imageen 3. señal filtrada pasa alto y pasa bajo
+<img width="617" alt="Figure 2025-03-27 191053 (1)" src="https://github.com/user-attachments/assets/76f5872d-b4a2-4559-a0e5-9c26f504154b" />
+  
    
-5. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
+4. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
 
 
 En el procesamiento de la señal EMG, se aplica una ventana de Hanning a cada segmento seleccionado. La elección de este tipo de ventana se debe a su capacidad para reducir las discontinuidades en los extremos de los segmentos, minimizando el efecto de fuga espectral en la Transformada de Fourier. La ventana de Hanning es una función suave, definida matemáticamente como:
@@ -109,49 +109,95 @@ En este código, el tamaño de la ventana se define en 2000 muestras, lo que per
 Para visualizar el impacto de la ventana, se pueden graficar tanto la señal original del segmento como la señal tras la aplicación de la ventana. Esto permite comparar cómo cambia la amplitud y la forma de la señal después de la convolución. La superposición de ambas señales ayuda a evidenciar la reducción de efectos no deseados en la estimación del espectro de frecuencias.
 
 
-
-5. Luego a todo esto, se observará como cambia el espectro se la señal en cada ventana mientras más se acerque  a la fatiga muscular, para evaluar la disminución de la frecuencia mediana en cada ventana como indicador de la fatiga, por último se implementa una prueba de hipótesis para verificar si el cambio en la mediana tiene un valor significativo en la estadistíca.
-
-
-
-La mediana se calcula con la formmula
-Imageen 3. señal filtrada pasa alto y pasa bajo
-<img width="617" alt="Figure 2025-03-27 191053 (1)" src="https://github.com/user-attachments/assets/76f5872d-b4a2-4559-a0e5-9c26f504154b" />
-
-
 ventanas por contracciones (17) con su respectivo espectro 
 
 Imagen 4. CONTRACCIÓN Y ESPECTRO 1.
 
 <img width="569" alt="Figure 2025-03-27 191053 (2)" src="https://github.com/user-attachments/assets/8e27e4c9-142e-4eb3-993a-43c2ff532b90" />
 
+- En esta gráfica se evidencia , en el eje horizontal se representa el tiempo en muestras, mientras que en el eje vertical se muestra la amplitud de la señal EMG.
+Inicialmente, la señal tiene una amplitud muy baja (cercana a 0), lo que indica un estado de reposo o baja actividad muscular. A partir de aproximadamente la muestra 500, la amplitud de la señal aumenta y presenta oscilaciones más pronunciadas, lo que sugiere la activación del músculo y una contracción sostenida.
+- La señal es de naturaleza oscilatoria y caótica, lo cual es típico en registros EMG debido a la combinación de múltiples unidades motoras activándose simultáneamente.
+Gráfica inferior: Espectro de frecuencia de la señal EMG. En el eje horizontal se representa la frecuencia en Hz, mientras que en el eje vertical se muestra la magnitud de la señal en el dominio de la frecuencia.
+
+Para la parte del espectro;
+- Se observa que la mayor concentración de energía se encuentra en frecuencias bajas, aproximadamente entre 0 y 100 Hz. Esto es característico de señales EMG, donde la mayor parte del contenido útil suele estar por debajo de los 150 Hz.
+A partir de los 100 Hz, la magnitud de la señal decrece rápidamente, lo que indica que hay poca energía en frecuencias más altas. No se observan picos muy marcados en altas frecuencias, lo cual sugiere que no hay interferencias de alta frecuencia o ruido significativo en la señal.
+
+
 Imagen 5. CONTRACCIÓN Y ESPECTRO 2.
 
 <img width="569" alt="Figure 2025-03-27 191053 (3)" src="https://github.com/user-attachments/assets/851216c1-e66e-40e5-a4f1-4ca716f5a00d" />
+
+- En esta gráfica, al inicio, la señal presenta oscilaciones de alta amplitud, lo que sugiere una fuerte activación muscular, mientras que hacia el final de la señal, la amplitud disminuye, lo que indica la relajación progresiva del músculo.
+- Alrededor de la muestra 1000, hay una caída abrupta, posiblemente un artefacto o una transición brusca en la contracción.
+
+ Para la parte del espectro;
+- La mayor concentración de energía se encuentra en las frecuencias bajas, principalmente por debajo de los 100 Hz, hay una disminución progresiva en la magnitud conforme aumenta la frecuencia. Esto es característico de las señales EMG, ya que la mayor parte de la información relevante se encuentra en el rango de 20 a 150 Hz, dependiendo del tipo de músculo y la intensidad de la contracción.
+- La presencia de ruido o actividad de alta frecuencia parece ser mínima, lo cual sugiere que la señal ha sido correctamente filtrada.
+
 
 Imagen 6.CONTRACCIÓN Y ESPECTRO 3.
 
 <img width="569" alt="Figure 2025-03-27 191053 (4)" src="https://github.com/user-attachments/assets/f7086e05-d30b-4c12-b835-801cff2b9e67" />
 
+
+- En esta gráfica, en las primeras 500 muestras, la señal es prácticamente nula, lo que sugiere que el músculo estaba en reposo antes de la contracción. A partir de aproximadamente la muestra 750, se observa un aumento progresivo en la actividad EMG, con oscilaciones de mayor amplitud. La fase de contracción parece ser más prolongada y consistente en comparación con la "Contracción 2", lo que sugiere una activación muscular más sostenida. A diferencia de la "Contracción 2", aquí no se observa una caída abrupta en la señal.
+
+ Para la parte del espectro;
+- Se observa un pico predominante por debajo de los 50 Hz, lo que es característico de una señal EMG limpia y sin ruido de alta frecuencia. La mayor concentración de energía se encuentra entre 20 y 100 Hz, lo que es típico en señales EMG de contracciones musculares voluntarias. En comparación con la "Contracción 2", la magnitud máxima es un poco mayor, lo que puede indicar una contracción más intensa o sostenida.No hay presencia significativa de frecuencias altas, lo que sugiere que la señal está bien filtrada y sin artefactos eléctricos.
+
+
 Imagen 7. CONTRACCIÓN Y ESPECTRO 4.
 
 <img width="569" alt="Figure 2025-03-27 191053 (5)" src="https://github.com/user-attachments/assets/d1a9986a-98a0-44e6-812a-342e8c6a43b4" />
+
+- En esta gráfica, se observa actividad muscular desde el inicio (aproximadamente en la muestra 100), lo que sugiere que la contracción comenzó antes que en las gráficas anteriores. La amplitud de la señal es relativamente constante y con una gran densidad de picos a lo largo del tiempo, indicando una contracción mantenida.
+En comparación con las contracciones anteriores, esta presenta una actividad más continua y sin pausas evidentes.
+
+Para la parte del espectro;
+- Se observa un pico predominante en la región de 0 a 50 Hz, lo cual es característico de señales EMG. La concentración de energía entre 20 y 100 Hz sigue el mismo patrón que las contracciones anteriores. La magnitud del pico máximo es menor que en la "Contracción 3", pero sigue dentro del rango típico para una contracción voluntaria. No se observan picos en altas frecuencias, lo que indica que la señal está bien filtrada y libre de ruido.
+  
 
 Imagen 8. CONTRACCIÓN Y ESPECTRO 5.
 
 <img width="569" alt="Figure 2025-03-27 191053 (6)" src="https://github.com/user-attachments/assets/8cfaf68f-4938-48f3-a734-95340fb8d91a" />
 
+- En esta gráfica, la contracción comienza cerca de la muestra 100 y se mantiene hasta aproximadamente la muestra 1500.Se observa una disminución progresiva en la actividad después de la muestra 1300, lo que podría indicar fatiga muscular o el final voluntario de la contracción. Comparado con las contracciones anteriores, esta presenta una reducción más evidente en la amplitud en la fase final.
+
+ Para la parte del espectro;
+- Se observa un pico predominante en la región de 0 a 50 Hz, lo cual es típico en señales EMG. La distribución de energía es similar a la de la "Contracción 4", pero la magnitud de los picos es mayor, indicando posiblemente una mayor intensidad en la actividad muscular. Se mantiene una concentración de energía entre 20 y 100 Hz, sin componentes significativas en frecuencias más altas.
+
+  
+
 Imagen 9. CONTRACCIÓN Y ESPECTRO 6.
 
 <img width="569" alt="Figure 2025-03-27 191053 (7)" src="https://github.com/user-attachments/assets/cbe3ac83-92c9-4d24-9c2e-03c3df24f3c3" />
+
+- En esta gráfica, se observa una actividad intensa en los primeros 800-1000 puntos, con variaciones rápidas y una amplitud mayor. Posteriormente, la señal se estabiliza y muestra un comportamiento con menor amplitud, lo que sugiere relajación muscular tras la contracción.
+
+Para la parte del espectro; 
+- Representa la Transformada de Fourier de la señal EMG, es decir, cómo se distribuyen sus componentes en frecuencia. El eje X muestra la frecuencia en Hz, mientras que el eje Y representa la magnitud de cada frecuencia.
+- Se observa que la mayor parte de la energía de la señal está concentrada en el rango de 0 a 100 Hz, con picos más marcados entre 0 y 50 Hz. Después de 100 Hz, la magnitud de la señal cae abruptamente, indicando que la mayor parte de la información relevante está en las frecuencias bajas e intermedias.
+
+
 
 Imagen 10. CONTRACCIÓN Y ESPECTRO 7.
 
 <img width="569" alt="Figure 2025-03-27 191053 (8)" src="https://github.com/user-attachments/assets/6780977f-f3f9-4eb9-947f-1312d52bea22" />
 
+-Esta gráfica, se observa un periodo inicial de baja actividad (hasta ~600 muestras), seguido de una contracción activa que aumenta en intensidad y persiste hasta el final de la muestra.Comparado con la contracción 6, esta señal parece más sostenida y con una amplitud ligeramente mayor en la segunda mitad del registro.
+
+Para la parte del espectro;
+- Muestra la Transformada de Fourier de la señal EMG, representando las frecuencias predominantes. La mayor parte de la energía se encuentra en el rango de 0 a 100 Hz, con picos más pronunciados entre 0 y 50 Hz.
+- Se observa una magnitud de frecuencia más elevada (~50) en comparación con la contracción 6 (~30), lo que indica una mayor intensidad en las componentes de alta frecuencia. A partir de los 100 Hz, la magnitud disminuye rápidamente, indicando que las frecuencias dominantes están en el rango bajo e intermedio.
+
+
 Imagen 11. CONTRACCIÓN Y ESPECTRO 8.
 
 <img width="569" alt="Figure 2025-03-27 191053 (9)" src="https://github.com/user-attachments/assets/4fff6596-9acc-4cd4-a97f-7e8fb88dde97" />
+
+
 
 Imagen 12. CONTRACCIÓN Y ESPECTRO 9.
 
@@ -188,6 +234,19 @@ Imagen 19. CONTRACCIÓN Y ESPECTRO 16.
 Imagen 20. CONTRACCIÓN Y ESPECTRO 17.
 
 <img width="569" alt="Figure 2025-03-27 191053 (18)" src="https://github.com/user-attachments/assets/5d8aeb1a-cf51-41f7-93b7-e773de954ff7" />
+
+
+
+
+
+5. Luego a todo esto, se observará como cambia el espectro se la señal en cada ventana mientras más se acerque  a la fatiga muscular, para evaluar la disminución de la frecuencia mediana en cada ventana como indicador de la fatiga, por último se implementa una prueba de hipótesis para verificar si el cambio en la mediana tiene un valor significativo en la estadistíca.
+
+
+
+La mediana se calcula con la formmula:
+
+
+
 
 
 calculos estadisticos por ventana y test de hipotesis 
