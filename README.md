@@ -55,6 +55,9 @@ if _name_ == "_main_":   == __name__ es una variable especial en Python.
 
 A su vez, se conectaron los electrodos al sensor emg, que permitirá captar bien la señal muscular, teniendo claro que el músculo que elegimos, en la parte del antebrazo, el flexor superficial, se realiza un cálculo de la frecuencia de muestreo para realizar la captura de la señal.
 
+
+Imagen 1. como se colocaron los electrodos en el paciente:
+
 ![WhatsApp Image 2025-03-27 at 11 48 14](https://github.com/user-attachments/assets/670f57d2-f976-427d-a5ca-7744fa0e4679)
 
 
