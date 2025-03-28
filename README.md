@@ -197,45 +197,136 @@ Imagen 11. CONTRACCIÓN Y ESPECTRO 8.
 
 <img width="569" alt="Figure 2025-03-27 191053 (9)" src="https://github.com/user-attachments/assets/4fff6596-9acc-4cd4-a97f-7e8fb88dde97" />
 
+En esta gráfica, se observa una fase inicial con baja actividad (~0 a 200 muestras), seguida de una fase de contracción activa (~200 a 1200 muestras), y una fase de relajación (~1200 en adelante). En comparación con las contracciones anteriores, esta señal parece más irregular en su amplitud, con picos más altos (~1.0) en ciertos momentos. Después de la muestra 1200, la señal disminuye rápidamente en amplitud, indicando el final de la contracción.
+
+Para la parte de espectro;
+Se observa que la mayor parte de la energía está concentrada entre 0 y 100 Hz, con un pico fuerte alrededor de 50-60 Hz. En comparación con las contracciones anteriores, la magnitud máxima del espectro es más alta (~60), lo que sugiere una mayor intensidad en estas frecuencias. A partir de 100 Hz, la magnitud disminuye rápidamente, mostrando una menor contribución de las frecuencias altas.
+
 
 
 Imagen 12. CONTRACCIÓN Y ESPECTRO 9.
 
 <img width="569" alt="Figure 2025-03-27 191053 (10)" src="https://github.com/user-attachments/assets/8a3989d2-c624-4dca-9f11-19c9eec87d5a" />
 
+- En esta gráfica, se observa una fase inicial de reposo (~0 a 900 muestras) sin actividad significativa. A partir de la muestra 900, comienza la contracción, con un incremento gradual en la amplitud. La fase de contracción se extiende hasta el final de la señal (~2000 muestras), con oscilaciones de amplitud que llegan hasta ±1.0. En comparación con la contracción 8, esta señal tiene una activación más tardía pero parece más sostenida.
+
+Para la parte de espectro; 
+- La mayor parte de la energía está concentrada entre 0 y 100 Hz, con picos importantes cerca de 50 Hz. La magnitud máxima del espectro es ~50, similar a la contracción 7, pero menor que la contracción 8 (~60). A partir de 100 Hz, la magnitud disminuye rápidamente, con valores casi nulos más allá de 200 Hz.
+
+
 Imagen 13. CONTRACCIÓN Y ESPECTRO 10.
 
 <img width="569" alt="Figure 2025-03-27 191053 (11)" src="https://github.com/user-attachments/assets/dae943bb-e27f-4aa9-8d70-00caf78e6924" />
+
+En esta gráfica, se muestra la actividad comienza alrededor de las 200 muestras, con un incremento progresivo de la amplitud. La fase de contracción más intensa ocurre entre 400 y 1200 muestras, con picos que alcanzan aproximadamente ±1.0.
+Después de las 1200 muestras, la amplitud comienza a disminuir gradualmente hasta estabilizarse cerca de las 1750 muestras.Comparada con las contracciones anteriores, esta parece más simétrica en su activación y relajación.
+
+Para la parte de espectro;
+La mayor parte de la energía está concentrada entre 0 y 100 Hz, con picos significativos en torno a 50-60 Hz.La magnitud máxima en este espectro es ~70, la más alta hasta ahora en comparación con las contracciones previas. A partir de 100 Hz, la magnitud disminuye progresivamente, manteniendo valores bajos después de 200 Hz.
+
 
 Imagen 14. CONTRACCIÓN Y ESPECTRO 11.
 
 <img width="569" alt="Figure 2025-03-27 191053 (12)" src="https://github.com/user-attachments/assets/6ce3c6ea-c6c9-445e-b51f-8e3c8347be5e" />
 
+- En esta gráfica, se observa la señal comienza con oscilaciones de baja amplitud cercanas a 0, lo que sugiere un estado de reposo inicial del músculo.
+Aproximadamente desde la muestra 100, la señal empieza a aumentar su amplitud, indicando el inicio de la contracción muscular.
+El pico máximo de amplitud ocurre alrededor de la muestra 500, con valores que oscilan entre -1 y 1, reflejando una contracción fuerte y sostenida.
+Hacia la muestra 1000, la amplitud comienza a decrecer progresivamente hasta estabilizarse nuevamente en valores cercanos a 0, lo que indica la relajación del músculo. La forma de la señal sugiere una contracción rápida con una disminución controlada, lo que podría estar relacionado con una fatiga moderada del músculo.
+
+
+Para la parte del espetro;
+-Se observa una mayor concentración de energía en las frecuencias bajas, principalmente entre 0 y 100 Hz, lo cual es característico de señales EMG en contracciones musculares normales. El pico dominante está alrededor de los 50 Hz, lo que indica que la mayor actividad eléctrica del músculo ocurre en esa frecuencia. A partir de los 100 Hz, la energía del espectro decae rápidamente, con valores casi nulos después de los 200 Hz, lo que es esperable en señales EMG donde las altas frecuencias suelen estar más asociadas a ruido que a información útil.
+
+
+
 Imagen 15. CONTRACCIÓN Y ESPECTRO 12.
 
 <img width="569" alt="Figure 2025-03-27 191053 (13)" src="https://github.com/user-attachments/assets/43253198-5f5a-4dc9-a066-dcd5050947c0" />
+
+
+- En esta gráfica, la señal comienza en reposo, con valores cercanos a 0 hasta aproximadamente la muestra 1000.A partir de la muestra 1000, la amplitud de la señal aumenta rápidamente, indicando el inicio de la contracción muscular.
+En comparación con la Contracción 11, esta señal muestra un incremento más gradual de la amplitud y un mayor número de oscilaciones de alta frecuencia. La amplitud alcanza su máximo alrededor de la muestra 1500 y se mantiene elevada hasta cerca de la muestra 1750. Luego, la señal empieza a decaer paulatinamente, lo que sugiere una relajación más progresiva del músculo en comparación con la Contracción 11.
+La forma de la señal sugiere que esta contracción podría haber requerido más esfuerzo o haber sido mantenida por más tiempo.
+
+- Para la parte de espectro;
+Al igual que en la Contracción 11, la mayor parte de la energía está concentrada en el rango 0-100 Hz, con un pico dominante en torno a 50 Hz. Se observa un patrón de distribución de energía más amplio en comparación con la Contracción 11, lo que indica la presencia de más componentes de alta frecuencia. A partir de los 100 Hz, la energía decae de manera más gradual en comparación con la señal anterior, lo que sugiere una mayor variabilidad en la contracción muscular.
+
+
 
 Imagen 16. CONTRACCIÓN Y ESPECTRO 13.
 
 <img width="569" alt="Figure 2025-03-27 191053 (14)" src="https://github.com/user-attachments/assets/ca08fc91-c744-4499-8cbe-d6c80d3a867d" />
 
+
+- En esta gráfica se muestra la fase inicial (0-250 muestras): La señal se mantiene cerca de 0, indicando un estado de reposo muscular antes de la contracción. Inicio de la contracción (250-500 muestras): La amplitud comienza a aumentar gradualmente, mostrando una activación progresiva del músculo. Fase de contracción máxima (500-1750 muestras): Se observa una oscilación sostenida con amplitudes variables, lo que sugiere una contracción continua y posiblemente una variación en la activación de las fibras musculares. Relajación (1750-2000 muestras): La amplitud comienza a disminuir, indicando la relajación del músculo después de la contracción.
+Comparación con contracciones anteriores: Esta señal muestra una activación más irregular con amplitudes variables, lo que podría reflejar un esfuerzo menos constante o un mayor nivel de fatiga en el músculo.
+
+
+Para la parte del espectro;
+- Distribución de energía: La mayor concentración de energía se encuentra en el rango 0-100 Hz, lo cual es típico en señales EMG. Pico dominante: Se encuentra cerca de 50 Hz, indicando que la mayor actividad muscular se presenta en esta frecuencia.
+Disminución progresiva: A partir de los 100 Hz, la energía del espectro comienza a descender rápidamente, con valores casi nulos después de los 200 Hz. Comparación con espectros anteriores: Esta señal presenta una mayor variabilidad en las frecuencias bajas, lo que podría estar relacionado con cambios en la activación muscular durante la contracción. También se observa una mayor dispersión de la energía en comparación con la Contracción 11, lo que puede ser indicativo de una mayor activación de fibras musculares o de una contracción más inestable.
+
+
+
 Imagen 17. CONTRACCIÓN Y ESPECTRO 14.
 
 <img width="569" alt="Figure 2025-03-27 191053 (15)" src="https://github.com/user-attachments/assets/6ed15224-8351-49e2-8e2b-bd28fd41b725" />
+
+
+Fase inicial (0-100 muestras): Presenta valores bajos, lo que indica un estado de reposo antes de la activación muscular.Inicio de la contracción (100-250 muestras): Se observa un aumento en la amplitud, lo que marca el comienzo de la actividad muscular.Fase de contracción máxima (250-1250 muestras): Hay una oscilación sostenida con picos relativamente altos, reflejando una contracción mantenida con posibles variaciones en la intensidad.Descenso de actividad (1250-1500 muestras): Se observa una disminución progresiva en la amplitud, lo que indica el inicio de la relajación muscular.Relajación (1500-2000 muestras): La amplitud disminuye significativamente, mostrando que el músculo regresa a un estado de reposo.
+Comparación con otras contracciones: En comparación con la Contracción 13, esta señal parece presentar una contracción menos sostenida en el tiempo y una relajación más progresiva.
+
+
+Para la parte de espectro;
+Distribución de energía: La mayor parte de la energía se encuentra en el rango 0-100 Hz, lo cual es característico de señales EMG. Pico dominante: Se encuentra cerca de 50 Hz, lo que es común en señales de actividad muscular.
+Disminución de energía: A partir de los 100 Hz, la magnitud cae rápidamente, con valores muy bajos más allá de los 200 Hz. Comparación con otras contracciones: Presenta un patrón de frecuencia similar a la Contracción 13, pero con una distribución de energía más concentrada en los primeros 100 Hz, lo que sugiere una activación más estable del músculo.
+
 
 Imagen 18. CONTRACCIÓN Y ESPECTRO 15.
 
 <img width="569" alt="Figure 2025-03-27 191053 (16)" src="https://github.com/user-attachments/assets/b3305a7a-38c4-4e38-a7ac-c6f8c0609a74" />
 
+
+Fase inicial (0-800 muestras): Se observa un período prolongado de reposo con baja amplitud, lo que indica inactividad muscular. Inicio de la contracción (800-1000 muestras): La amplitud comienza a aumentar progresivamente, señalando la activación del músculo. Fase de contracción máxima (1000-1800 muestras): Se presenta una oscilación con alta amplitud, mostrando una contracción sostenida con variabilidad en la intensidad de los picos. Fase de relajación (1800-2000 muestras): Se observa una disminución en la amplitud, lo que indica que el músculo regresa a su estado de reposo. Comparación con otras contracciones: En comparación con la Contracción 13 y 14, esta contracción inicia más tarde y parece tener una duración menor en su fase activa, pero con picos de mayor amplitud.
+
+
+Para la parte del espectro;
+Distribución de energía: La mayor parte de la energía se concentra entre 0 y 100 Hz, lo que es característico de las señales EMG.
+Pico dominante: Se encuentra en torno a 50-60 Hz, lo que coincide con la actividad neuromuscular esperada.Disminución de energía: A partir de los 100 Hz, la magnitud cae rápidamente y se mantiene en valores bajos después de los 200 Hz.
+Comparación con otras contracciones: Esta señal tiene un pico de mayor magnitud en comparación con las anteriores, lo que sugiere una activación muscular más intensa o con mayor esfuerzo.
+
+
 Imagen 19. CONTRACCIÓN Y ESPECTRO 16.
 
 <img width="569" alt="Figure 2025-03-27 191053 (17)" src="https://github.com/user-attachments/assets/488dc30e-229d-43a9-8527-ef94cf6cdaa6" />
+
+
+Fase inicial (0-250 muestras): Presenta una actividad basal con amplitudes bajas, lo que indica que el músculo está en reposo.
+Inicio de la contracción (250-500 muestras): Se observa un incremento progresivo en la amplitud de la señal, reflejando el inicio de la activación muscular.
+Fase de contracción máxima (500-1250 muestras): Durante este intervalo, la señal presenta oscilaciones con amplitud significativa, lo que sugiere una contracción sostenida con variabilidad en la intensidad.
+Fase de relajación (1250-2000 muestras): La amplitud comienza a disminuir hasta acercarse nuevamente a valores bajos, lo que indica que el músculo regresa a su estado de reposo. Comparación con otras contracciones: Esta contracción muestra una activación temprana y sostenida con una fase de relajación más definida en comparación con las anteriores.
+
+
+Para la parte del espectro; 
+Distribución de energía: La mayor parte de la energía se concentra entre 0 y 100 Hz, lo cual es típico en señales EMG.Pico dominante: Se observa un pico de alta magnitud en torno a 50-60 Hz, lo que indica la presencia de una activación muscular fuerte.
+Magnitud máxima: Es una de las señales con mayor magnitud observada hasta el momento, lo que podría estar relacionado con una contracción más intensa o prolongada.
+Disminución de energía: A partir de los 100 Hz, la magnitud cae rápidamente y se mantiene baja después de los 200 Hz. Comparación con otras contracciones: El pico de energía en esta señal es más alto en comparación con las contracciones 13, 14 y 15, lo que podría indicar una mayor activación neuromuscular o una contracción más fuerte y estable.
+
 
 Imagen 20. CONTRACCIÓN Y ESPECTRO 17.
 
 <img width="569" alt="Figure 2025-03-27 191053 (18)" src="https://github.com/user-attachments/assets/5d8aeb1a-cf51-41f7-93b7-e773de954ff7" />
 
+Análisis de la señal EMG (Contracción 17)
+Fase inicial (0-100 muestras): Se observa una activación temprana con oscilaciones de amplitud moderada, lo que indica el inicio de la contracción.
+Pico de actividad (100-600 muestras): La amplitud alcanza su máximo con oscilaciones más densas y fuertes, reflejando la fase de contracción más intensa.
+Fase de relajación (600-1250 muestras): Se nota una disminución gradual en la amplitud, lo que sugiere que el músculo está relajándose.
+Reposo final (1250-2000 muestras): La señal vuelve a una actividad mínima, indicando el término de la contracción. Comparación con otras contracciones: Esta contracción tiene una duración activa más corta y una relajación más rápida en comparación con la contracción 16.
 
+Para la parte del espectro;
+Distribución de energía: La mayor parte de la energía se encuentra en el rango de 0-100 Hz, lo que es común en señales EMG. Pico de frecuencia dominante: Se presenta en torno a 50-60 Hz, lo cual puede deberse a la activación neuromuscular o a interferencia de la red eléctrica. Magnitud máxima: Menor en comparación con la contracción 16, lo que indica una menor intensidad de la contracción.
+Rápida disminución de energía: La señal pierde energía rápidamente después de los 100 Hz, lo que sugiere una menor presencia de componentes de alta frecuencia.
 
 
 
