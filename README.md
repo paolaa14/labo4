@@ -23,57 +23,34 @@ from scipy.signal import find_peaks    ====  se usa para encontrar picos en una 
 
 
 def adquirir_datos(fs, cantidad):   == se define una función que toma dos parámetros fs, que es la frecuencia de muestreo en Hz, es decir cuantas muestras por segundo se capturarán y la cantidad que es el número total de muestras a adquirir.
-
-
     with nidaqmx.Task() as task: == aqui se crea una tarea DAQ, que es basicamente una configuración deadquisiión de datos de la tarjeta DAQ.
+        task.ai_channels.add_ai_voltage_chan("Dev4/ai0", min_val=0, max_val=4) ==aquí dice que esta parte "Dev4/ai0" indica que la señal leerpa del canal analogico 0 (en la DAQ hay un puerto que se llama ai0), en cuanto a min_val=0, max_val=4, quiere decir el rango de voltaje de la DAQ que es de 0 a 4 V.
+        task.timing.cfg_samp_clk_timing(fs, sample_mode=nidaqmx.constants.AcquisitionType.FINITE, samps_per_chan=cantidad) == en esta parte lo de cfg_samp_clk_timing(fs, ...), configura la frecuencia de muestreo en HZ, lo de sample_mode=nidaqmx.constants.AcquisitionType.FINITE indica que la adquisición será finita, porque se tomarán exactamente la cantidad de muestras y luego se detiene y samps_per_chan=cantidad permite definir que se capturarán cantidad de muestras en total (las muestras en total depende de cuantas contracciones haga la persona) y para que esto se comprenda mejor ; i fs = 1000 Hz y cantidad = 5000, la DAQ tomará 5000 muestras en 5 segundos.
+        return [v for _ in range(6) for v in task.read(cantidad)] == aqui la parte de task.read(cantidad) permite leer los datos aquiridos desde la DAQ devolviendo cantidad valores de voltaje y [v for _ in range(6) for v in task.read(cantidad)]: expande los datos 6 veces, o sea que repite cada muestra 6 veces en la lista de salida.
+
+
+        
+
+def main():  == se define un main, que ejecutará todo el flujo del programa.
+    try: == esto es para capturar errores, entonces si algo falla dentro del try, se ejecuta except Exception as e y se muestra el error.
+        fs, cantidad = 250, 2500 == aqui se indica que se capturarán 250 muestras por segundo y 2500 muestras en total (10 segundos).
+        data = adquirir_datos(fs, cantidad) == adquirir_datos(fs, cantidad) que esta definida antes para capturar la señal desde la DAQ.
+        nombre = input("Nombre del archivo: ") == aqui se le pide al usuario el nombre del archivo que quiere ponerle y se guardaraán de forma .npy o .csv.
+        np.save(f"{nombre}.npy", data)   == guarda datos en formato binario Numpy (.npy) que significa prácticamente que es más eficiente.
+        pd.DataFrame(data).to_csv(f"{nombre}.csv", index=False) == guarda los datos en formato CSV para abrirlo ya sea en excel o matlab (por si se quieren hacer análisis estadísticos).
+        peaks, _ = find_peaks(data, distance=fs//5, height=0.2) == encuentra los picos en la señal usando find_peaks() de scipy.signal, que significa que solo detecta picos que estén separados al manos 1/5 de segundo (50 muestras si fs=250) y la parte de height=0.2, indica que filtra los picos que tengan amplitud mayor a 0.2 (ajustable según la señal).
+        if len(peaks) > 1:
+            print(f"Frecuencia estimada: {round((60 * fs) / np.mean(np.diff(peaks)), 2)} BPM")  ===  np.diff(peaks): calcula el intervalo entre picos en muestras, np.mean(np.diff(peaks)): calcula el promedio de los intervalos.
+        plt.plot(data); plt.plot(peaks, np.array(data)[peaks], 'rx'); 
+        plt.show()                 ===plt.plot(data): Grafica la señal EMG, plt.show(): Muestra la gráfica en pantalla y plt.plot(peaks, np.array(data)[peaks], 'rx'): evidencia los picos en la gráfica.
+    except Exception as e:
+        print(f"Error: {e}")   == esto indica que si algo falla imprime el error en la consola en lugar de detener el programa de forma inesperada.
+
+if _name_ == "_main_":   == __name__ es una variable especial en Python.
+    main()import nidaqmx == si ejecutamos este script directamente (python archivo.py), __name__ será igual a "__main__", y por eso se ejecutará main().
+
     
-        task.ai_channels.add_ai_voltage_chan("Dev4/ai0", min_val=0, max_val=4) ==aquí dice que esta parte "Dev4/ai0" indica que la señal leerpa del canal analogico 0 (en la DAQ hay un puerto que se llama ai0), en cuanto a min_val=0, max_val=4
-        task.timing.cfg_samp_clk_timing(fs, sample_mode=nidaqmx.constants.AcquisitionType.FINITE, samps_per_chan=cantidad)
-        return [v for _ in range(6) for v in task.read(cantidad)]
 
-def main():
-    try:
-        fs, cantidad = 250, 2500
-        data = adquirir_datos(fs, cantidad)
-        nombre = input("Nombre del archivo: ")
-        np.save(f"{nombre}.npy", data)
-        pd.DataFrame(data).to_csv(f"{nombre}.csv", index=False)
-        peaks, _ = find_peaks(data, distance=fs//5, height=0.2)
-        if len(peaks) > 1:
-            print(f"Frecuencia estimada: {round((60 * fs) / np.mean(np.diff(peaks)), 2)} BPM")
-        plt.plot(data); plt.plot(peaks, np.array(data)[peaks], 'rx'); plt.show()
-    except Exception as e:
-        print(f"Error: {e}")
-
-if _name_ == "_main_":
-    main()import nidaqmx
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.signal import find_peaks
-
-def adquirir_datos(fs, cantidad):
-    with nidaqmx.Task() as task:
-        task.ai_channels.add_ai_voltage_chan("Dev4/ai0", min_val=0, max_val=4)
-        task.timing.cfg_samp_clk_timing(fs, sample_mode=nidaqmx.constants.AcquisitionType.FINITE, samps_per_chan=cantidad)
-        return [v for _ in range(6) for v in task.read(cantidad)]
-
-def main():
-    try:
-        fs, cantidad = 250, 2500
-        data = adquirir_datos(fs, cantidad)
-        nombre = input("Nombre del archivo: ")
-        np.save(f"{nombre}.npy", data)
-        pd.DataFrame(data).to_csv(f"{nombre}.csv", index=False)
-        peaks, _ = find_peaks(data, distance=fs//5, height=0.2)
-        if len(peaks) > 1:
-            print(f"Frecuencia estimada: {round((60 * fs) / np.mean(np.diff(peaks)), 2)} BPM")
-        plt.plot(data); plt.plot(peaks, np.array(data)[peaks], 'rx'); plt.show()
-    except Exception as e:
-        print(f"Error: {e}")
-
-if _name_ == "_main_":
-    main()
 
 
 A su vez, se conectaron los electrodos al sensor emg, que permitirá captar bien la señal muscular, teniendo claro que el músculo que elegimos, en la parte del antebrazo, el flexor superficial, se realiza un cálculo de la frecuencia de muestreo para realizar la captura de la señal.
