@@ -121,56 +121,71 @@ Imageen 3. señal filtrada pasa alto y pasa bajo
 
 ventanas por contracciones (17) con su respectivo espectro 
 
-Imagen 4. CONTRACCIÓN 1.
+Imagen 4. CONTRACCIÓN Y ESPECTRO 1.
+
 <img width="569" alt="Figure 2025-03-27 191053 (2)" src="https://github.com/user-attachments/assets/8e27e4c9-142e-4eb3-993a-43c2ff532b90" />
 
-Imagen 5. ESPECTRO CONTRACCIÓN 1.
+Imagen 5. CONTRACCIÓN Y ESPECTRO 2.
+
 <img width="569" alt="Figure 2025-03-27 191053 (3)" src="https://github.com/user-attachments/assets/851216c1-e66e-40e5-a4f1-4ca716f5a00d" />
 
-Imagen 6. CONTRACCIÓN 2.
+Imagen 6.CONTRACCIÓN Y ESPECTRO 3.
+
 <img width="569" alt="Figure 2025-03-27 191053 (4)" src="https://github.com/user-attachments/assets/f7086e05-d30b-4c12-b835-801cff2b9e67" />
 
-Imagen 7. ESPECTRO CONTRACCIÓN 2.
+Imagen 7. CONTRACCIÓN Y ESPECTRO 4.
+
 <img width="569" alt="Figure 2025-03-27 191053 (5)" src="https://github.com/user-attachments/assets/d1a9986a-98a0-44e6-812a-342e8c6a43b4" />
 
-Imagen 8. CONTRACCIÓN 3.
+Imagen 8. CONTRACCIÓN Y ESPECTRO 5.
+
 <img width="569" alt="Figure 2025-03-27 191053 (6)" src="https://github.com/user-attachments/assets/8cfaf68f-4938-48f3-a734-95340fb8d91a" />
 
-
-Imagen 9. ESPECTRO CONTRACCIÓN 3.
+Imagen 9. CONTRACCIÓN Y ESPECTRO 6.
 <img width="569" alt="Figure 2025-03-27 191053 (7)" src="https://github.com/user-attachments/assets/cbe3ac83-92c9-4d24-9c2e-03c3df24f3c3" />
 
-Imagen 10. CONTRACCIÓN 4.
+Imagen 10. CONTRACCIÓN Y ESPECTRO 7.
+
 <img width="569" alt="Figure 2025-03-27 191053 (8)" src="https://github.com/user-attachments/assets/6780977f-f3f9-4eb9-947f-1312d52bea22" />
 
-Imagen 11. ESPECTRO CONTRACCIÓN 4.
+Imagen 11. CONTRACCIÓN Y ESPECTRO 8.
+
 <img width="569" alt="Figure 2025-03-27 191053 (9)" src="https://github.com/user-attachments/assets/4fff6596-9acc-4cd4-a97f-7e8fb88dde97" />
 
-Imagen 12. CONTRACCIÓN 5.
+Imagen 12. CONTRACCIÓN Y ESPECTRO 9.
+
 <img width="569" alt="Figure 2025-03-27 191053 (10)" src="https://github.com/user-attachments/assets/8a3989d2-c624-4dca-9f11-19c9eec87d5a" />
 
-Imagen 13. ESPECTRO CONTRACCIÓN 5.
+Imagen 13. CONTRACCIÓN Y ESPECTRO 10.
+
 <img width="569" alt="Figure 2025-03-27 191053 (11)" src="https://github.com/user-attachments/assets/dae943bb-e27f-4aa9-8d70-00caf78e6924" />
 
-Imagen 14. CONTRACCIÓN 6.
+Imagen 14. CONTRACCIÓN Y ESPECTRO 11.
+
 <img width="569" alt="Figure 2025-03-27 191053 (12)" src="https://github.com/user-attachments/assets/6ce3c6ea-c6c9-445e-b51f-8e3c8347be5e" />
 
-Imagen 15. ESPECTRO CONTRACCIÓN 6.
+Imagen 15. CONTRACCIÓN Y ESPECTRO 12.
+
 <img width="569" alt="Figure 2025-03-27 191053 (13)" src="https://github.com/user-attachments/assets/43253198-5f5a-4dc9-a066-dcd5050947c0" />
 
-Imagen 16. CONTRACCIÓN 7.
+Imagen 16. CONTRACCIÓN Y ESPECTRO 13.
+
 <img width="569" alt="Figure 2025-03-27 191053 (14)" src="https://github.com/user-attachments/assets/ca08fc91-c744-4499-8cbe-d6c80d3a867d" />
 
-Imagen 17. ESPECTRO CONTRACCIÓN 7.
+Imagen 17. CONTRACCIÓN Y ESPECTRO 14.
+
 <img width="569" alt="Figure 2025-03-27 191053 (15)" src="https://github.com/user-attachments/assets/6ed15224-8351-49e2-8e2b-bd28fd41b725" />
 
-Imagen 18. CONTRACCIÓN 8.
+Imagen 18. CONTRACCIÓN Y ESPECTRO 15.
+
 <img width="569" alt="Figure 2025-03-27 191053 (16)" src="https://github.com/user-attachments/assets/b3305a7a-38c4-4e38-a7ac-c6f8c0609a74" />
 
-Imagen 19. ESPECTRO CONTRACCIÓN 8.
+Imagen 19. CONTRACCIÓN Y ESPECTRO 16.
+
 <img width="569" alt="Figure 2025-03-27 191053 (17)" src="https://github.com/user-attachments/assets/488dc30e-229d-43a9-8527-ef94cf6cdaa6" />
 
-Imagen 20. CONTRACCIÓN 9.
+Imagen 20. CONTRACCIÓN Y ESPECTRO 17.
+
 <img width="569" alt="Figure 2025-03-27 191053 (18)" src="https://github.com/user-attachments/assets/5d8aeb1a-cf51-41f7-93b7-e773de954ff7" />
 
 
