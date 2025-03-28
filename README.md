@@ -89,7 +89,7 @@ Por último, la fase de fatiga es la parte final de la señal que parece mantene
 
 
 
-3. Posterior a esto, se aplica un filtro a la señal pasa alta, con el fin de eliminar componentes de baja frecuencia (ruido que se asocie al movimiento), y asu vez se implementó un filtro pasa baja para quitar frecuencias altas como el ruidp electromagnético.
+3. Posterior a esto, se aplica un filtro a la señal pasa alta, con el fin de eliminar componentes de baja frecuencia (ruido que se asocie al movimiento), y a su vez se implementó un filtro pasa baja para quitar frecuencias altas como el ruido electromagnético.
 
 
 
@@ -97,7 +97,11 @@ Por último, la fase de fatiga es la parte final de la señal que parece mantene
 4. Es necesario mencionar, que para captar un pedazo de la señal que resultara analizable, se implementó una ventana, para observar determinado pedazo de la señal. y se le realizará un análisis espectral implementando la transformada de fourier para obtener el espectro de frecuencas en intervalos determinados de la señal EMG.
 
 
+En el procesamiento de la señal EMG, se aplica una ventana de Hanning a cada segmento seleccionado. La elección de este tipo de ventana se debe a su capacidad para reducir las discontinuidades en los extremos de los segmentos, minimizando el efecto de fuga espectral en la Transformada de Fourier. La ventana de Hanning es una función suave, definida matemáticamente como:
 
+w(n)=0.5(1−cos(2πn/ N−1)
+​
+ ))
 
 5. Luego a todo esto, se observará como cambia el espectro se la señal en cada ventana mientras más se acerque  a la fatiga muscular, para evaluar la disminución de la frecuencia mediana en cada ventana como indicador de la fatiga, por último se implementa una prueba de hipótesis para verificar si el cambio en la mediana tiene un valor significativo en la estadistíca.
 
