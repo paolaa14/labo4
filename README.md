@@ -341,7 +341,10 @@ Rápida disminución de energía: La señal pierde energía rápidamente despué
 
 calculos estadisticos por ventana y test de hipotesis 
 
+
+
 <img width="735" alt="Captura de pantalla 2025-03-27 a la(s) 7 17 36 p m" src="https://github.com/user-attachments/assets/a8292e93-f78e-4ff8-b9df-3baff28326d0" />
+
 
 <img width="730" alt="Captura de pantalla 2025-03-27 a la(s) 7 18 02 p m" src="https://github.com/user-attachments/assets/1020933d-0686-419f-8e0f-5e4e2006a16d" />
 
@@ -353,13 +356,63 @@ calculos estadisticos por ventana y test de hipotesis
 
 <img width="730" alt="Captura de pantalla 2025-03-27 a la(s) 11 03 52 p m" src="https://github.com/user-attachments/assets/adc64868-c39c-4d63-bf82-de36c0fed371" />
 
+- se procederá a hacer el análisis de los valores obtenidos;
+En el análisis de señales, la aplicación de ventanas es fundamental para minimizar efectos indeseados en el dominio de la frecuencia, como la fuga espectral. En este caso, se ha utilizado una ventana de Hann, seleccionada por su capacidad de reducir los lóbulos laterales en el espectro, lo que permite una mejor resolución de las componentes de frecuencia.
+
+Criterio de selección: Se eligió la ventana de Hann porque proporciona una atenuación gradual en los extremos de la señal, lo que minimiza discontinuidades y mejora la precisión del análisis espectral.
+
+Tamaño de la ventana: La ventana aplicada tiene un tamaño de N  muestras, asegurando que cada segmento analizado tenga suficiente resolución en el dominio de la frecuencia sin introducir distorsiones significativas.
+
+Forma de la ventana: La ventana de Hann sigue una función senoidal elevada al cuadrado, suavizando la señal antes del análisis espectral.
+
+Se ha comparado la señal antes y después de la aplicación de la ventana. Antes de la convolución, la señal presenta discontinuidades en los límites de los segmentos, lo que podría generar ruido en el espectro. Tras la aplicación de la ventana, las transiciones son más suaves, reduciendo la contribución de frecuencias no deseadas.
+
+- Para el analisis e interpretación de resultados: 
+
+Se han extraído estadísticas espectrales de 17 segmentos de la señal, analizando frecuencia dominante, mediana, media y desviación estándar. A continuación, se realiza una evaluación de estos valores:
+
+Frecuencia Dominante: Representa la frecuencia con mayor energía en cada segmento.
+
+Frecuencia Mediana: Divide el espectro en dos partes de igual energía.
+
+Frecuencia Media: Valor promedio de las frecuencias presentes en el segmento.
+
+Desviación Estándar: Indica la dispersión de las frecuencias en el espectro.
+
+- Análisis por Segmentos:
+
+Los segmentos presentan una media de frecuencias entre 49.60 Hz y 63.30 Hz, con variaciones significativas en ciertos segmentos, especialmente en el segmento 8, donde la frecuencia media alcanza 63.30 Hz con una desviación estándar alta de 59.88 Hz, lo que indica una gran dispersión en las frecuencias. Esto puede estar relacionado con la presencia de señales transitorias o ruido en esa región.
+
+La frecuencia dominante varía entre 26.50 Hz y 51.50 Hz, lo que sugiere que algunos segmentos tienen mayor concentración de energía en frecuencias más bajas, mientras que otros presentan picos más altos.
+
+Los segmentos 6, 9 y 10 presentan frecuencias dominantes bajas (26.50 Hz - 32.50 Hz), lo que podría indicar cambios en la dinámica de la señal.
+
+La desviación estándar en varios segmentos supera 30 Hz, lo que indica una gran dispersión en el contenido espectral, reflejando variaciones en la estabilidad de la señal analizada.
+
+- Prueba de Hipótesis sobre la Media de Frecuencia:
+Hipótesis Nula (H₀): La media de la frecuencia no es significativamente diferente de 50 Hz.
+Hipótesis Alternativa (H₁): La media de la frecuencia es significativamente diferente de 50 Hz.
+
+- Se obtuvo un estadístico t = 0.9415 y un valor p = 0.5192, lo que indica que no hay suficiente evidencia estadística para rechazar la hipótesis nula. Esto significa que, en términos generales, la media de la frecuencia no difiere significativamente de 50 Hz, aunque algunos segmentos individuales presenten variaciones.
 
 
 
+El análisis del rango de frecuencias revela que las señales oscilan entre 24 Hz y 450 Hz. Para determinar la fatiga en la señal, se considera la diferencia entre las medias de frecuencia en diferentes segmentos:
+
+Si Media 1 - Media 2 = 0, se concluye que existe fatiga nula, lo que indica estabilidad en la señal.
+
+Si Media 1 - Media 2 ≠ 0, se detecta fatiga alternante, lo que sugiere una variabilidad en la carga o el comportamiento dinámico del sistema analizado.
 
 
 
+6. Conclusiones generales;
+La aplicación de la ventana de Hann mejoró la calidad del análisis espectral, reduciendo fugas espectrales y mejorando la resolución en frecuencia.
 
+Aunque existen variaciones en algunos segmentos, el análisis estadístico indica que la media de la frecuencia no es significativamente diferente de 50 Hz en términos globales.
+
+Se identificaron diferencias entre segmentos, lo que sugiere que la señal puede experimentar períodos de fatiga alternante en ciertos momentos.
+
+La desviación estándar elevada en algunos segmentos sugiere que existen momentos de inestabilidad en la frecuencia.
 
 
 
