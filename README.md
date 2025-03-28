@@ -4,10 +4,76 @@ En dado caso de querer descargarlo, se pueden dirigir a la paginal de national i
 
 
 
+sección del código;
+CODIGO de la adquisición de la señal, este código lo pueden copiar y compilar en python, ya que fue con el que adquirimos la señal no obstante para que funcione optimamente tienen que realizar el circuito como se evidenciará más adelante.
 
-CODIGO:
+import nidaqmx      == esto es una libreria de python que es para interactuar con dispositivos como la DAQ, permitiendo leer datos de los dispositivos conectados  a la DAQ (el sensor emg) 
 
 
+import pandas as pd     === esta librería sirve para manipular datos cienctificos, se usa para almacenar, procesar y analizar los datos adquiridos.
+
+
+import numpy as np  ====     es una libreria para cálculo matemático y manipulación de arreglos numéricos, se implementa para manejar muchos datos  (todas las cantidades de muestras de una contracción) de manera eficiente.
+
+
+import matplotlib.pyplot as plt   === es una librería ára visualizar datos por medios de gráficas, que permite graficar la señal EMG y analizarla de manera visual.
+
+
+from scipy.signal import find_peaks    ====  se usa para encontrar picos en una señal, identificando momentos donde en la señal emg se alcanzan los valores máximos, es decir las contracciones musculares
+
+
+def adquirir_datos(fs, cantidad):   == se define una función que toma dos parámetros fs, que es la frecuencia de muestreo en Hz, es decir cuantas muestras por segundo se capturarán y la cantidad que es el número total de muestras a adquirir.
+
+
+    with nidaqmx.Task() as task: == aqui se crea una tarea DAQ, que es basicamente una configuración deadquisiión de datos de la tarjeta DAQ.
+    
+        task.ai_channels.add_ai_voltage_chan("Dev4/ai0", min_val=0, max_val=4) ==aquí dice que esta parte "Dev4/ai0" indica que la señal leerpa del canal analogico 0 (en la DAQ hay un puerto que se llama ai0), en cuanto a min_val=0, max_val=4
+        task.timing.cfg_samp_clk_timing(fs, sample_mode=nidaqmx.constants.AcquisitionType.FINITE, samps_per_chan=cantidad)
+        return [v for _ in range(6) for v in task.read(cantidad)]
+
+def main():
+    try:
+        fs, cantidad = 250, 2500
+        data = adquirir_datos(fs, cantidad)
+        nombre = input("Nombre del archivo: ")
+        np.save(f"{nombre}.npy", data)
+        pd.DataFrame(data).to_csv(f"{nombre}.csv", index=False)
+        peaks, _ = find_peaks(data, distance=fs//5, height=0.2)
+        if len(peaks) > 1:
+            print(f"Frecuencia estimada: {round((60 * fs) / np.mean(np.diff(peaks)), 2)} BPM")
+        plt.plot(data); plt.plot(peaks, np.array(data)[peaks], 'rx'); plt.show()
+    except Exception as e:
+        print(f"Error: {e}")
+
+if _name_ == "_main_":
+    main()import nidaqmx
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import find_peaks
+
+def adquirir_datos(fs, cantidad):
+    with nidaqmx.Task() as task:
+        task.ai_channels.add_ai_voltage_chan("Dev4/ai0", min_val=0, max_val=4)
+        task.timing.cfg_samp_clk_timing(fs, sample_mode=nidaqmx.constants.AcquisitionType.FINITE, samps_per_chan=cantidad)
+        return [v for _ in range(6) for v in task.read(cantidad)]
+
+def main():
+    try:
+        fs, cantidad = 250, 2500
+        data = adquirir_datos(fs, cantidad)
+        nombre = input("Nombre del archivo: ")
+        np.save(f"{nombre}.npy", data)
+        pd.DataFrame(data).to_csv(f"{nombre}.csv", index=False)
+        peaks, _ = find_peaks(data, distance=fs//5, height=0.2)
+        if len(peaks) > 1:
+            print(f"Frecuencia estimada: {round((60 * fs) / np.mean(np.diff(peaks)), 2)} BPM")
+        plt.plot(data); plt.plot(peaks, np.array(data)[peaks], 'rx'); plt.show()
+    except Exception as e:
+        print(f"Error: {e}")
+
+if _name_ == "_main_":
+    main()
 
 
 A su vez, se conectaron los electrodos al sensor emg, que permitirá captar bien la señal muscular, teniendo claro que el músculo que elegimos, en la parte del antebrazo, el flexor superficial, se realiza un cálculo de la frecuencia de muestreo para realizar la captura de la señal.
