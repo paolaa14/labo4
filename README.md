@@ -339,13 +339,6 @@ Rápida disminución de energía: La señal pierde energía rápidamente despué
 5. Luego a todo esto, se observará como cambia el espectro se la señal en cada ventana mientras más se acerque  a la fatiga muscular, para evaluar la disminución de la frecuencia mediana en cada ventana como indicador de la fatiga, por último se implementa una prueba de hipótesis para verificar si el cambio en la mediana tiene un valor significativo en la estadistíca.
 
 
-
-La mediana se calcula con la formmula:
-
-
-
-
-
 calculos estadisticos por ventana y test de hipotesis 
 
 <img width="735" alt="Captura de pantalla 2025-03-27 a la(s) 7 17 36 p m" src="https://github.com/user-attachments/assets/a8292e93-f78e-4ff8-b9df-3baff28326d0" />
