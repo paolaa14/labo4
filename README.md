@@ -20,11 +20,11 @@ En dado caso de querer descargarlo, se pueden dirigir a la paginal de national i
 sección del código;
 CODIGO de la adquisición de la señal, este código lo pueden copiar y compilar en python, ya que fue con el que adquirimos la señal no obstante para que funcione optimamente tienen que realizar el circuito como se evidenciará más adelante.
 
-import nidaqmx  # Interactúa con dispositivos DAQ para leer datos del sensor EMG
-import pandas as pd  # Manipulación de datos científicos, almacenamiento y análisis
-import numpy as np  # Cálculos matemáticos y manipulación de arreglos numéricos
-import matplotlib.pyplot as plt  # Visualización de datos mediante gráficas
-from scipy.signal import find_peaks  # Detección de picos en una señal EMG
+import nidaqmx    # Interactúa con dispositivos DAQ para leer datos del sensor EMG
+import pandas as pd     # Manipulación de datos científicos, almacenamiento y análisis
+import numpy as np     # Cálculos matemáticos y manipulación de arreglos numéricos
+import matplotlib.pyplot as plt    # Visualización de datos mediante gráficas
+from scipy.signal import find_peaks    # Detección de picos en una señal EMG
 
 
 def adquirir_datos(fs, cantidad):
