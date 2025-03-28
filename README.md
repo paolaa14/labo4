@@ -92,8 +92,12 @@ Por último, la fase de fatiga es la parte final de la señal que parece mantene
 3. Posterior a esto, se aplica un filtro a la señal pasa alta, con el fin de eliminar componentes de baja frecuencia (ruido que se asocie al movimiento), y a su vez se implementó un filtro pasa baja para quitar frecuencias altas como el ruido electromagnético.
 
 
-Imageen 3. señal filtrada pasa alto y pasa bajo
+Imagen 3. señal filtrada pasa alto y pasa bajo
+
+
 <img width="617" alt="Figure 2025-03-27 191053 (1)" src="https://github.com/user-attachments/assets/76f5872d-b4a2-4559-a0e5-9c26f504154b" />
+
+
 
 ![WhatsApp Image 2025-03-27 at 23 14 35](https://github.com/user-attachments/assets/53952ef3-e2c8-46e9-b54a-9f0c087bf4a7)
 
